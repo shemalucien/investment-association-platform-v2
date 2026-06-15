@@ -1,0 +1,63 @@
+.next/dev/types/validator.ts(162,31): error TS2344: Type 'typeof import("C:/Users/HP/Desktop/investment-association-platform-master/app/api/loans/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/loans/[id]">'.
+  Types of property 'GET' are incompatible.
+    Type '(request: NextRequest, { params }: { params: { id: string; }; }) => Promise<NextResponse<{ success: boolean; error: string; }> | NextResponse<{ success: boolean; data: Loan; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ id: string; }>; }' is not assignable to type '{ params: { id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'id' is missing in type 'Promise<{ id: string; }>' but required in type '{ id: string; }'.
+.next/dev/types/validator.ts(180,31): error TS2344: Type 'typeof import("C:/Users/HP/Desktop/investment-association-platform-master/app/api/members/[id]/route")' does not satisfy the constraint 'RouteHandlerConfig<"/api/members/[id]">'.
+  Types of property 'GET' are incompatible.
+    Type '(request: NextRequest, { params }: { params: { id: string; }; }) => Promise<NextResponse<{ success: boolean; error: string; }> | NextResponse<{ success: boolean; data: Member; }>>' is not assignable to type '(request: NextRequest, context: { params: Promise<{ id: string; }>; }) => void | Response | Promise<void | Response>'.
+      Types of parameters '__1' and 'context' are incompatible.
+        Type '{ params: Promise<{ id: string; }>; }' is not assignable to type '{ params: { id: string; }; }'.
+          Types of property 'params' are incompatible.
+            Property 'id' is missing in type 'Promise<{ id: string; }>' but required in type '{ id: string; }'.
+app/loans/page.tsx(82,16): error TS2345: Argument of type '{ status: string; id: string; memberId: string; memberName: string; principalAmount: number; interestRate: number; duration: number; monthlyPayment: number; totalRepayment: number; amountPaid: number; remainingBalance: number; applicationDate: string; approvalDate?: string | undefined; guarantors: string[]; }[]' is not assignable to parameter of type 'SetStateAction<Loan[]>'.
+  Type '{ status: string; id: string; memberId: string; memberName: string; principalAmount: number; interestRate: number; duration: number; monthlyPayment: number; totalRepayment: number; amountPaid: number; remainingBalance: number; applicationDate: string; approvalDate?: string | undefined; guarantors: string[]; }[]' is not assignable to type 'Loan[]'.
+    Type '{ status: string; id: string; memberId: string; memberName: string; principalAmount: number; interestRate: number; duration: number; monthlyPayment: number; totalRepayment: number; amountPaid: number; remainingBalance: number; applicationDate: string; approvalDate?: string; guarantors: string[]; }' is not assignable to type 'Loan'.
+      Types of property 'status' are incompatible.
+        Type 'string' is not assignable to type '"pending" | "approved" | "active" | "completed" | "rejected"'.
+app/members/page.tsx(310,72): error TS2339: Property 'memberNumber' does not exist on type 'Member'.
+app/members/page.tsx(341,82): error TS2339: Property 'memberNumber' does not exist on type 'Member'.
+app/page.tsx(63,40): error TS2339: Property 'totalAmount' does not exist on type 'Loan'.
+app/page.tsx(67,39): error TS2339: Property 'totalInterest' does not exist on type 'Loan'.
+app/page.tsx(106,40): error TS2551: Property 'depositType' does not exist on type 'Deposit'. Did you mean 'depositDate'?
+app/page.tsx(135,35): error TS2339: Property 'durationMonths' does not exist on type 'Loan'.
+app/social/page.tsx(41,40): error TS2339: Property 'permissions' does not exist on type 'User'.
+app/social/page.tsx(185,87): error TS2322: Type '{ title: string; value: any; icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; description: string; }' is not assignable to type 'IntrinsicAttributes & StatCardProps'.
+  Property 'description' does not exist on type 'IntrinsicAttributes & StatCardProps'.
+app/social/page.tsx(190,15): error TS2322: Type '{ title: string; value: any; icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; description: string; }' is not assignable to type 'IntrinsicAttributes & StatCardProps'.
+  Property 'description' does not exist on type 'IntrinsicAttributes & StatCardProps'.
+app/social/page.tsx(196,15): error TS2322: Type '{ title: string; value: string; icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; description: string; }' is not assignable to type 'IntrinsicAttributes & StatCardProps'.
+  Property 'description' does not exist on type 'IntrinsicAttributes & StatCardProps'.
+app/social/page.tsx(202,15): error TS2322: Type '{ title: string; value: string; icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; description: string; }' is not assignable to type 'IntrinsicAttributes & StatCardProps'.
+  Property 'description' does not exist on type 'IntrinsicAttributes & StatCardProps'.
+lib/auth/auth-service.ts(50,9): error TS2353: Object literal may only specify known properties, and 'permissions' does not exist in type 'User'.
+lib/auth/auth-service.ts(104,11): error TS2353: Object literal may only specify known properties, and 'permissions' does not exist in type 'User'.
+lib/auth/auth-service.ts(138,40): error TS2339: Property 'permissions' does not exist on type 'User'.
+lib/auth/auth-service.ts(141,17): error TS2339: Property 'permissions' does not exist on type 'User'.
+lib/db/connection.ts(91,20): error TS2339: Property 'length' does not exist on type 'any[][] | Record<string, any>[] | FullQueryResults<boolean>'.
+  Property 'length' does not exist on type 'FullQueryResults<boolean>'.
+lib/db/connection.ts(96,24): error TS2339: Property 'length' does not exist on type 'any[][] | Record<string, any>[] | FullQueryResults<boolean>'.
+  Property 'length' does not exist on type 'FullQueryResults<boolean>'.
+lib/db/connection.ts(110,3): error TS2322: Type '(any[][] | Record<string, any>[])[] | FullQueryResults<boolean>[]' is not assignable to type 'T'.
+  'T' could be instantiated with an arbitrary type which could be unrelated to '(any[][] | Record<string, any>[])[] | FullQueryResults<boolean>[]'.
+lib/db/connection.ts(110,26): error TS2345: Argument of type '(tx: NeonQueryFunctionInTransaction<boolean, boolean>) => Promise<T>' is not assignable to parameter of type 'NeonQueryPromise<boolean, boolean, any>[] | ((sql: NeonQueryFunctionInTransaction<boolean, boolean>) => NeonQueryInTransaction[])'.
+  Type '(tx: NeonQueryFunctionInTransaction<boolean, boolean>) => Promise<T>' is not assignable to type '(sql: NeonQueryFunctionInTransaction<boolean, boolean>) => NeonQueryInTransaction[]'.
+    Type 'Promise<T>' is missing the following properties from type 'NeonQueryInTransaction[]': length, pop, push, concat, and 35 more.
+lib/db/queries/deposits.ts(15,3): error TS2322: Type '{ id: any; memberId: any; memberName: any; depositType: any; amount: number; depositDate: any; paymentMethod: any; description: any; }[]' is not assignable to type 'Deposit[]'.
+  Property 'type' is missing in type '{ id: any; memberId: any; memberName: any; depositType: any; amount: number; depositDate: any; paymentMethod: any; description: any; }' but required in type 'Deposit'.
+lib/db/queries/deposits.ts(65,5): error TS2561: Object literal may only specify known properties, but 'depositType' does not exist in type 'Deposit'. Did you mean to write 'depositDate'?
+lib/db/queries/loans.ts(18,3): error TS2322: Type '{ id: any; memberId: any; memberName: any; loanNumber: any; principalAmount: number; interestRate: number; totalInterest: number; totalAmount: number; durationMonths: any; monthlyPayment: number; ... 7 more ...; notes: any; }[]' is not assignable to type 'Loan[]'.
+  Type '{ id: any; memberId: any; memberName: any; loanNumber: any; principalAmount: number; interestRate: number; totalInterest: number; totalAmount: number; durationMonths: any; monthlyPayment: number; ... 7 more ...; notes: any; }' is missing the following properties from type 'Loan': duration, totalRepayment, remainingBalance, guarantors
+lib/db/queries/loans.ts(64,5): error TS2353: Object literal may only specify known properties, and 'loanNumber' does not exist in type 'Loan'.
+lib/db/queries/loans.ts(153,5): error TS2322: Type 'null' is not assignable to type 'string | undefined'.
+lib/db/queries/members.ts(17,3): error TS2322: Type '{ id: any; memberNumber: any; name: any; email: any; phone: any; nationalId: any; address: any; joinDate: any; status: any; totalShares: number; totalDeposits: number; }[]' is not assignable to type 'Member[]'.
+  Property 'activeLoans' is missing in type '{ id: any; memberNumber: any; name: any; email: any; phone: any; nationalId: any; address: any; joinDate: any; status: any; totalShares: number; totalDeposits: number; }' but required in type 'Member'.
+lib/db/queries/members.ts(53,5): error TS2353: Object literal may only specify known properties, and 'memberNumber' does not exist in type 'Member'.
+lib/db/queries/members.ts(97,5): error TS2353: Object literal may only specify known properties, and 'memberNumber' does not exist in type 'Member'.
+lib/db/queries/shares.ts(15,3): error TS2322: Type '{ id: any; memberId: any; memberName: any; quantity: any; pricePerShare: number; totalAmount: number; purchaseDate: any; paymentMethod: any; notes: any; }[]' is not assignable to type 'Share[]'.
+  Type '{ id: any; memberId: any; memberName: any; quantity: any; pricePerShare: number; totalAmount: number; purchaseDate: any; paymentMethod: any; notes: any; }' is missing the following properties from type 'Share': numberOfShares, status
+lib/db/queries/shares.ts(43,3): error TS2322: Type '{ id: any; memberId: any; memberName: any; quantity: any; pricePerShare: number; totalAmount: number; purchaseDate: any; paymentMethod: any; notes: any; }[]' is not assignable to type 'Share[]'.
+  Type '{ id: any; memberId: any; memberName: any; quantity: any; pricePerShare: number; totalAmount: number; purchaseDate: any; paymentMethod: any; notes: any; }' is missing the following properties from type 'Share': numberOfShares, status
+lib/db/queries/shares.ts(97,5): error TS2353: Object literal may only specify known properties, and 'quantity' does not exist in type 'Share'.
