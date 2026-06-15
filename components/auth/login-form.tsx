@@ -91,7 +91,7 @@ export function LoginForm() {
               className="rounded-full"
             />
           </div>
-          <CardTitle className="text-2xl text-center">AMATSINDA</CardTitle>
+          <CardTitle className="text-2xl text-center">COOPERATIVE</CardTitle>
           <CardDescription className="text-center">Sign in to Cooperative Management System</CardDescription>
         </CardHeader>
         <CardContent>
@@ -150,6 +150,16 @@ export function LoginForm() {
                 "Sign In"
               )}
             </Button>
+
+            <div className="text-center">
+              <button
+                type="button"
+                onClick={() => router.push("/forgot-password")}
+                className="text-sm text-primary hover:underline"
+              >
+                Forgot password?
+              </button>
+            </div>
 
             {/* <div className="mt-6 p-4 bg-blue-50 rounded-lg space-y-2 text-xs">
               <p className="font-semibold text-blue-900">Demo Accounts:</p>

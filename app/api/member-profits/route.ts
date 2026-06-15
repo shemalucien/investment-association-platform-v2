@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { getMemberProfits, getTotalMemberProfits, getProfitDistributions } from "@/lib/db/queries/profits"
+import { getMemberByUserId } from "@/lib/db/queries/members"
 import { verifyToken } from "@/lib/auth/jwt"
 
 export async function GET(request: NextRequest) {
@@ -14,10 +15,16 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: false, error: "Invalid token" }, { status: 401 })
     }
 
+    // Get member from user ID
+    const member = await getMemberByUserId(payload.userId as string)
+    if (!member) {
+      return NextResponse.json({ success: true, data: { memberProfits: [], totalProfits: 0, totalRevenue: 0, allDistributions: [] } })
+    }
+
     // Get member's profits
-    const memberProfits = await getMemberProfits(payload.userId)
-    const totalProfits = await getTotalMemberProfits(payload.userId)
-    
+    const memberProfits = await getMemberProfits(member.id)
+    const totalProfits = await getTotalMemberProfits(member.id)
+
     // Get all profit distributions to show cooperative revenue
     const allDistributions = await getProfitDistributions()
     const totalRevenue = allDistributions.reduce((sum, dist) => sum + dist.total_amount, 0)
